@@ -35,6 +35,9 @@
         display: flex;
         gap:30px;
         flex-direction: column;
+        h1{
+            text-transform: capitalize;
+        }
         .price{
             font-weight: 500;
             font-size: 30px;
@@ -44,7 +47,7 @@
         p{
             font-size: 18px;
             font-weight: 300;
-            text-align: center;
+            text-align: left;
             gap:10px;
         }
         .quantity{

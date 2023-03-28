@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import { useState } from "react";
 import Cart from "../Cart/Cart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setopen] = useState(false);
+  const data=useSelector((state)=>state.cart.products)
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -45,7 +47,9 @@ const Navbar = () => {
 
         {/* Center */}
         <div className="center">
-          <div className="item">CLOTHERA</div>
+          <Link className="link" to="/">
+          <div className="item"  >CLOTHERA</div>
+          </Link>
         </div>
         {/* Right */}
 
@@ -84,7 +88,7 @@ const Navbar = () => {
               }}
             >
               <ShoppingCartIcon />
-              <span>0</span>
+              <span>{data.length}</span>
             </div>
           </div>
         </div>
